@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import PerformanceOptimizations from "./performance-optimizations";
+import RefsExample from './refs'
 import ErrorBoundaries from "./error-boundaries";
 import { Provider } from 'react-redux'
 import { createStore } from "redux";
 
-import reducer from ".testing-react-component/components/CounterStore/reducer";
+import reducer from "./testing-react-component/components/CounterStore/reducer";
 
 const store = createStore(reducer)
+
+function Home() {
+  return <h1>Advanced React Workshop</h1>
+}
 
 class App extends Component {
   render() {
@@ -18,10 +23,13 @@ class App extends Component {
             <div className="sidebar">
               <ul>
                 <li>
-                  <Link to="/">Refs</Link>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/performance-optimizations">perfromance optimizations</Link>
+                  <Link to="/refs">Refs</Link>
+                </li>
+                <li>
+                  <Link to="/performance-optimizations">Perfromance optimizations</Link>
                 </li>
                 <li>
                   <Link to="/error-boundaries">Error Boundaries</Link>
@@ -29,9 +37,10 @@ class App extends Component {
               </ul>
             </div>
             <div className="content">
-              <Route exact path="/" component={PerformanceOptimizations} />
+              <Route exact path="/" component={Home} />
               <Route path="/performance-optimizations" component={PerformanceOptimizations} />
               <Route path="/error-boundaries" component={ErrorBoundaries} />
+              <Route path="/refs" component={RefsExample} />
             </div>
           </div>
         </Router>
