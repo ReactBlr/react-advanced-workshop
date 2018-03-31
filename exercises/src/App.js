@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import PerformanceOptimizations from "./performance-optimizations";
 import RefsExample from './refs'
 import HOC from './component-patterns/hoc'
+import Portals from './portals/01-using-modals/src/App'
 import ErrorBoundaries from "./error-boundaries";
 import { Provider } from 'react-redux'
 import { createStore } from "redux";
@@ -30,6 +31,9 @@ class App extends Component {
                   <Link to="/hoc">HOC</Link>
                 </li>
                 <li>
+                  <Link to="/portals">Portals</Link>
+                </li>
+                <li>
                   <Link to="/refs">Refs</Link>
                 </li>
                 <li>
@@ -43,6 +47,7 @@ class App extends Component {
             <div className="content">
               <Route exact path="/" component={Home} />
               <Route path="/hoc" component={HOC} />
+              <Route path="/portals" component={Portals} />
               <Route path="/performance-optimizations" component={PerformanceOptimizations} />
               <Route path="/error-boundaries" component={ErrorBoundaries} />
               <Route path="/refs" component={RefsExample} />
