@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from "react";
+import Count from "./Count";
 import superExpensiveFunction from "./utils/superExpensiveFunction";
 
 class Counter extends Component {
-  static buttonStyle = {
-    padding: "5px"
-  };
   state = {
     count: 0,
     timestamp: Date.now()
@@ -14,8 +12,20 @@ class Counter extends Component {
     count: prevState.count + 1
   });
 
-  handleCounterClick = () => {
-    this.setState(this.increment);
+  decrement = prevState => ({
+    count: prevState.count - 1
+  });
+
+  handleIncrementClick = () => {
+    if (this.state.count < 10) {
+      this.setState(this.increment);
+    }
+  };
+
+  handleDecrementClick = () => {
+    if(this.state.count > 0) {
+      this.setState(this.decrement);
+    }
   };
 
   handleDummyOperationClick = () => {
@@ -24,22 +34,21 @@ class Counter extends Component {
     });
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    // Implement shouldComponentUpdate to avoid unnecessary re-renders.
-  }
+  // Implement shouldComponentUpdate to avoid unnecessary re-renders.
+  // shouldComponentUpdate(nextProps, nextState) {
+  // }
 
   render() {
     const { count } = this.state;
     const calculatedCount = superExpensiveFunction(count);
     return (
       <Fragment>
-        <div>Clicks: {calculatedCount}</div>
-        <div style={Counter.buttonStyle}>
-          <button onClick={this.handleCounterClick}>Increment</button>
-        </div>
-        <div style={Counter.buttonStyle}>
-          <button onClick={this.handleDummyOperationClick}>Dummy</button>
-        </div>
+        <Count
+          onIncrement={ this.handleIncrementClick }
+          onDecrement={ this.handleDecrementClick }
+          value={ calculatedCount }
+        />
+        <button className="Counter__button" onClick={this.handleDummyOperationClick}>Dummy</button>
       </Fragment>
     );
   }

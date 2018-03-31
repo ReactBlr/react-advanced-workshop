@@ -3,14 +3,15 @@ import Counter from "./Counter";
 
 const styles = {
   fontFamily: "sans-serif",
-  textAlign: "center"
+  textAlign: "center",
+  padding: "40px 120px 0"
 };
 
-const App = () => (
+const PerformanceOptimizationExample = () => (
   <div style={styles}>
-    <p>Implement shouldComponentUpdate in Counter to avoid unnecessary re-renders.</p>
+    <b>Implement shouldComponentUpdate in Counter & Count components to avoid unnecessary re-renders.</b>
     <Counter />
   </div>
 );
 
-export default App
+export default PerformanceOptimizationExample;
