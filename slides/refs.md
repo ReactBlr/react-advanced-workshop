@@ -7,9 +7,9 @@ Kiran Abburi
 ---
 
 ### Refs
-* To imperatively modify a child outside of the typical dataflow
 * Provides access to DOM nodes or React component instances
-
+* To imperatively modify a child outside of the typical dataflow
+* We should not over use refs
 ---
 
 ### Usecases
