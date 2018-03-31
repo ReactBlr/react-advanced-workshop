@@ -87,3 +87,56 @@ class Form extends React.Component {
 ```
 
 ---
+
+React.forwardRef
+```
+function logProps(WrappedComponent) {
+  class LogProps extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log('old props:', prevProps);
+      console.log('new props:', this.props);
+    }
+
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+
+  return LogProps;
+}
+export default logProps(FancyButton);
+```
+
+---
+
+React.forwardRef
+```
+<FancyButton
+  label="Click Me"
+  handleClick={handleClick}
+  ref={ref}
+/>;
+```
+
+---
+
+React.forwardRef
+```
+function logProps(WrappedComponent) {
+  class LogProps extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log('old props:', prevProps);
+      console.log('new props:', this.props);
+    }
+
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+  function forwardRef(props, ref) {
+    return <LogProps {...props} forwardedRef={ref} />;
+  }
+  return React.forwardRef(forwardRef);
+}
+export default logProps(FancyButton);
+```
