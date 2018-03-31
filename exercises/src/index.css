@@ -52,6 +52,10 @@ body {
   font-weight: 600;
 }
 
+.Counter__button:active {
+  opacity: 0.8;
+}
+
 .Counter__item {
   height: 56px;
   display: flex;
