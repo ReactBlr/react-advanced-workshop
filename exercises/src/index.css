@@ -26,3 +26,58 @@ body {
   flex: 3;
   flex-direction: column;
 }
+
+.Counter {
+  background-color: rgb(255, 255, 255);
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+.Counter__button {
+  display: inline-block;
+  -webkit-appearance: button;
+  user-select: none;
+  outline: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 4px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  font-size: 18px;
+  padding: 14px 12px;
+  background-color: rgb(246, 104, 38);
+  color: white;
+  font-weight: 600;
+}
+
+.Counter__button:active {
+  opacity: 0.8;
+}
+
+.Counter__item {
+  height: 56px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+.Counter__actions {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.Counter__count {
+  width: 50px;
+  text-align: center;
+}
+
+.Counter__disabled {
+  opacity: 0.3;
+}
