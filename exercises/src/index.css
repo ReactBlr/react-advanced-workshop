@@ -8,10 +8,11 @@ body {
 .container {
   display: flex;
   flex: 1;
+  padding-top: 50px;
 }
 
 .sidebar {
-  padding-top: 50px;
+
   flex: 1;
 }
 .sidebar ul {
