@@ -8,6 +8,7 @@ const App = (props) => {
     <div>
       <Header />
       <Main />
+      <div id="modal"></div>
     </div>
   );
 }
