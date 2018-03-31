@@ -1,27 +1,28 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background: #eee;
+  font-family: "Nunito", sans-serif;
 }
 
 .container {
-  padding-top: 50px;
   display: flex;
   flex: 1;
 }
 
 .sidebar {
-   flex: 1;
-
+  padding-top: 50px;
+  flex: 1;
 }
 .sidebar ul {
   list-style: none;
 }
 .sidebar li {
- padding: 5px;
+  padding: 5px;
 }
 
 .content {
   display: flex;
   flex: 3;
+  flex-direction: column;
 }
